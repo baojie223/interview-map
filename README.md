@@ -44,9 +44,11 @@
 
 - typeof instanceof
 
+- Event Loop相关
+
 ### web
 
-- 输入url到加载完成
+- 输入url到看到网站
 
 - 缓存，cookie和localstorage
 
