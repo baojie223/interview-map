@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="a.css"> -->
+  <script src="./手写代码/常规/reg.js"></script>
+</head>
+
+<body>
+  <button id="btn">按钮</button>
+  <script>
+    // const btn = document.querySelector('#btn')
+    // function say(name) {
+    //   console.log(name)
+    // }
+    // btn.addEventListener('click', throttle2(say, 1000))
+
+
+    // function a() {
+    //   // console.log(arguments)
+    //   // console.log(args)
+    //   const b = () => {
+    //     console.log(arguments)
+    //   }
+    //   b(1)
+    // }
+
+    // a(1, 2, 3, 'shit')
+
+    const b = {
+      time: '1'
+    }
+    let tpl = "time is ${{time}}"
+    console.log(render(tpl, b))
+    console.log(tpl)
+  </script>
+</body>
+
+</html>

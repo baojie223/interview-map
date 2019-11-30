@@ -1,13 +1,25 @@
+// function curry(fn) {
+//   var allArgs = []
+//   return function next() {
+//     // const args = Array.from(arguments)
+//     var args = [].slice.call(arguments)
+//     if (args.length > 0) {
+//       allArags = allArgs.concat(args)
+//       return next
+//     } else {
+//       return fn.apply(null, allArgs)
+//     }
+//   }
+// }
+
 function curry(fn) {
-  var allArgs = []
-  return function next() {
-    // const args = Array.from(arguments)
-    var args = [].slice.call(arguments)
-    if (args.length > 0) {
-      allArags = allArgs.concat(args)
-      return next
-    } else {
+  let allArgs = []
+  return function next(...args) {
+    if (!args.length) {
       return fn.apply(null, allArgs)
+    } else {
+      allArgs = allArgs.concat(args)
+      return next
     }
   }
 }
@@ -46,7 +58,7 @@ var add = currying(function(){
   return sum;
 });
 
-console.log(add(1)(2, 3)(4, 5, 6)())
+// console.log(add(1)(2, 3)(4, 5, 6)())
 
 function uncurrying(fn) {
   return function() {
@@ -95,4 +107,4 @@ const sum = currying(function() {
   return sum
 })
 
-console.log(sum(1, 2)(3)(4, 5, 6)())
+// console.log(sum(1, 2)(3)(4, 5, 6)())

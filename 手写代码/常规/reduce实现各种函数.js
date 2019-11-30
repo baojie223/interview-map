@@ -1,12 +1,19 @@
-Array.prototype.myMap = function(cb) {
-  if (typeof cb !== 'function') {
-    return new TypeError('cb不是一个函数')
-  } else {
-    return this.reduce((prev, curr, index, list) => {
-      return prev.concat(cb(curr, index, list))
-    }, [])
-  }
+// Array.prototype.myMap = function(cb) {
+//   if (typeof cb !== 'function') {
+//     return new TypeError('cb不是一个函数')
+//   } else {
+//     return this.reduce((prev, curr, index, list) => {
+//       return prev.concat(cb(curr, index, list))
+//     }, [])
+//   }
+// }
+Array.prototype.myMap = function(fn) {
+  const result = this.reduce((prev, curr, index, arr) => {
+    return prev.concat(fn(curr, index, arr))
+  }, [])
+  return result
 }
+
 
 Array.prototype.myFilter = function(cb) {
   if (typeof cb !== 'function') {

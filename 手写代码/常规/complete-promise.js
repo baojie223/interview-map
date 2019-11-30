@@ -1,5 +1,35 @@
 class MyPromise {
   status = 'pending'
+  value = ''
+  reason = ''
+  constructor(fn) {
+    fn(this.resolve, this.reject)
+  }
+
+  static then(fn) {
+    fn(this.value)
+  }
+
+  resolve(value) {
+    if (this.status === 'pending') {
+      this.value = value
+      this.status = 'resolved'
+      return this
+    }
+  }
+
+  reject(reason) {
+    if (this.status === 'pending') {
+      this.reason = reason
+      this.status = 'rejected'
+      return this
+    }
+  }
+}
+
+return 
+class MyPromise {
+  status = 'pending'
   value = void 0
   reason = void 0
   onFulfilledArray = []

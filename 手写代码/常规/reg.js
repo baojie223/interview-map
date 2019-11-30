@@ -15,11 +15,26 @@ function thousand(number) {
 const hour = 12
 const minute = 30
 const second = 15
+// function render(tpl, data) {
+//   const reg = /\$\{(.*?)\}/g
+//   return tpl.replace(reg, (match, key) => {
+//     console.log(match, key)
+//     // return data[key]
+//     return eval(key)
+//   })
+// }
+
 function render(tpl, data) {
-  const reg = /\$\{(.*?)\}/g
+  const reg = /\$\{\{(.*?)\}\}/
   return tpl.replace(reg, (match, key) => {
     console.log(match, key)
-    // return data[key]
-    return eval(key)
+    return data[key]
   })
 }
+
+// const a = {
+//   time: '1'
+// }
+// let tpl = "${{time}}"
+// render(tpl, a)
+// console.log(tpl)
